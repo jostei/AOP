@@ -1,0 +1,11 @@
+public class tehtava1 {
+  public static void main(String[] args){
+    if(args[0].length() < args[1].length() && args[0].length() < args[2].length()){
+      System.out.println(args[0]);
+    }else if (args[1].length() < args[0].length() && args[1].length() < args[3].length()){
+      System.out.println(args[1]);
+    }else{
+      System.out.println(args[2]);
+    }
+  }
+}

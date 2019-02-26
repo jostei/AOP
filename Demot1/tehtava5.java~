@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class tehtava5 {
+  public static void main(String[] args){
+    
+    Scanner lukija = new Scanner(System.in);
+    
+    System.out.println("Syötä toisen asteen yhtälön ax^2 + bx + c = 0 kertoimet.");
+    
+    System.out.print("Kerroin a: ");
+    double a = Double.parseDouble(lukija.nextLine());                                   // luetaan karroin a doublena
+    System.out.print("Kerroin b: ");
+    double b = Double.parseDouble(lukija.nextLine());                                   // luetaan karroin b doublena
+    System.out.print("Kerroin c: ");
+    double c = Double.parseDouble(lukija.nextLine());                                   // luetaan karroin c doublena
+    
+    double xEka = ((-b-Math.sqrt(b*b-4*a*c))/(2*a));
+    double xToka = ((-b+Math.sqrt(b*b-4*a*c))/(2*a));
+    
+    System.out.println("Tämän toisen asteen yhtälön juuret ovat:");
+    if(Double.isNaN(xEka) && Double.isNaN(xToka)){                                      // testataan antaakoa yhtälö reaalilukuarvoiset juuret
+      System.out.println("Ei reaalijuuria.");
+    }else{                                                                              // jos kumpikaan arvo ei ole NaN, tulostetaan juuret
+      System.out.println("x_1 = "+xEka);
+      System.out.println("x_2 = "+xToka);
+      
+    }
+  }
+}

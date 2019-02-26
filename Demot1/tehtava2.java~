@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class tehtava2 {
+  public static void main(String[] args){
+    
+    Scanner lukija = new Scanner(System.in);
+    
+    System.out.print("Syötä syntymävuotesi: ");
+    String vuosi = lukija.nextLine();                                                                  // pyydetään käyttäjältä syntymävuosi
+    
+    System.out.println("Olet vuoden 2017 lopussa "+(2017-Integer.parseInt(vuosi))+" vuotta vanha.");   // tulostetaan ikä = 2017 - syntymävuosi
+    
+  }
+}

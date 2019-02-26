@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class tehtava6 {
+  
+	public static void main(String[] args){
+    
+    Scanner lukija = new Scanner(System.in);
+    
+    System.out.print("Syötä merkkijono A: ");                                                                     // luetaan käyttäjältä merkkijonot A ja B
+    String ekaJono = lukija.nextLine();
+    System.out.print("Syötä merkkijono B: ");
+    String tokaJono = lukija.nextLine();
+    
+    String uusiJono = ekaJono;
+    
+    while(uusiJono.indexOf(tokaJono)!=-1){                                                                        // etsitään A:n ensimmäinen indeksi josta B löydetään, toistetaan kunnes B:tä ei löydy enää
+      String eiHailaitti1 = uusiJono.substring(0, uusiJono.indexOf(tokaJono));                                    // valitaan pala ennen B:n indeksiä
+      String hailaitti = tokaJono.toUpperCase();                                                                  // lisätään väliin B isoilla kirjaimilla
+      String eiHailaitti2 = uusiJono.substring(uusiJono.indexOf(tokaJono)+tokaJono.length(),uusiJono.length());   // valitaan pala B:n jälkeen A:sta
+      uusiJono = eiHailaitti1+hailaitti+eiHailaitti2;                                                             // kasataan uusi merkkijono palasista jossa A:n ensimmäinen B:tä vastaava pätkä korvattu isoilla kirjaimilla
+    }
+    
+    System.out.println("Tässä B:n highlightit jonosta A: "+uusiJono);                                             // tulostetaan uusi merkkijono
+    lukija.close();
+  }
+}
